@@ -366,7 +366,36 @@ pre code {
 </div>
 
 
-
+<p>In your R Markdown document, find the derivative expression and slope
+at the indicated value for each the following functions in R (each in a
+separate code chunk).</p>
+<pre><code>f(x)=x2</code></pre>
+<p>at x=3 P(a)=2(3a+2)4−5 at a=1.2 g(t)=−4t(t2+1)3 at t=0</p>
+<pre class="r"><code>a &lt;- expression(x ^2)
+deriv_a &lt;- deriv(a, &quot;x&quot;)
+x &lt;- 3
+eval(deriv_a)</code></pre>
+<pre><code>## [1] 9
+## attr(,&quot;gradient&quot;)
+##      x
+## [1,] 6</code></pre>
+<pre class="r"><code>b &lt;- expression(2 * ((3 * a + 2) ^4) -5)
+deriv_b &lt;- deriv(b, &quot;a&quot;)
+a &lt;- 1.2
+eval(deriv_b)</code></pre>
+<pre><code>## [1] 1961.899
+## attr(,&quot;gradient&quot;)
+##             a
+## [1,] 4214.784</code></pre>
+<pre class="r"><code>c &lt;- expression((-4*t) / ((t^2 +1)^3))
+deriv_c &lt;- deriv(c, &quot;t&quot;)
+t &lt;- 0
+eval(deriv_c)</code></pre>
+<pre><code>## [1] 0
+## attr(,&quot;gradient&quot;)
+##       t
+## [1,] -4</code></pre>
+<p>ggplot graph</p>
 
 
 
