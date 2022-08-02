@@ -25,7 +25,7 @@ deriv_a <- deriv(a, "x")
 x <- 3
 eval(deriv_a)
 
-b <- expression(2 * ((3 * a + 2) ^4) -5)
+b <- expression(2 * (3 * a + 2) ^4 -5)
 deriv_b <- deriv(b, "a")
 a <- 1.2
 eval(deriv_b)
